@@ -8,7 +8,10 @@ public abstract class Vehicle implements Rentable{
     protected String plate;
     protected double price;
     protected double rentPricePerDay;
-
+    protected boolean isAvailable;
+    {
+        isAvailable = true;
+    }
     public Vehicle(String name, String model, String plate, double price) {
         this.name = name;
         this.model = model;
