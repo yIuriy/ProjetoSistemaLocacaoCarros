@@ -8,6 +8,10 @@ public class RentalCompany {
     protected List<Customer> customerList = new ArrayList<>();
     protected List<Vehicle> vehicleList = new ArrayList<>();
 
+    public RentalCompany(String name) {
+        this.name = name;
+    }
+
     public void addCustomer(Customer customer){
         customerList.add(customer);
     }
