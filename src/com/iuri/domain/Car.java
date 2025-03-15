@@ -14,7 +14,7 @@ public class Car extends Vehicle {
 
     @Override
     public double calculateRentPrice() {
-        double RENT_TAX = 350;
-        return RENT_VALUE + RENT_TAX + CarTypeTax.calculateTypeTax(type);
+        double rentTax = 350;
+        return RENT_VALUE + rentTax + CarTypeTax.calculateTypeTax(type);
     }
 }
