@@ -13,10 +13,18 @@ public class Customer {
 
     public Customer(String name, String cpf) {
         this.name = name;
-        if(CheckCpfStandard.check(cpf)){
-        this.cpf = cpf;
-        }else {
-           throw new RuntimeException("Invalid CPF");
+        if (CheckCpfStandard.check(cpf)) {
+            this.cpf = cpf;
+        } else {
+            throw new RuntimeException("Invalid CPF");
         }
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public List<Vehicle> getRentedVehicles() {
+        return rentedVehicles;
     }
 }
