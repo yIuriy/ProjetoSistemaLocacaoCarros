@@ -8,8 +8,7 @@ public class Truck extends Vehicle{
     }
 
     @Override
-    public double calculateRentPrice() {
-        double rentTax = 1200;
-        return RENT_VALUE + rentTax;
+    public double calculateRentPricePerDay() {
+        return RENT_VALUE;
     }
 }

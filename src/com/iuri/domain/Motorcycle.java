@@ -7,8 +7,7 @@ public class Motorcycle extends Vehicle{
     }
 
     @Override
-    public double calculateRentPrice() {
-        double  rentTax = 50;
-        return RENT_VALUE + rentTax;
+    public double calculateRentPricePerDay() {
+        return RENT_VALUE;
     }
 }
