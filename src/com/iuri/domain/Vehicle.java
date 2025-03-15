@@ -1,6 +1,6 @@
 package com.iuri.domain;
 
-import com.iuri.services.CheckPlateStandart;
+import com.iuri.services.CheckPlateStandard;
 
 public abstract class Vehicle implements Rentable{
     protected String name;
@@ -12,11 +12,11 @@ public abstract class Vehicle implements Rentable{
     public Vehicle(String name, String model, String plate, double price) {
         this.name = name;
         this.model = model;
-        if (CheckPlateStandart.check(plate)){
+        if (CheckPlateStandard.check(plate)){
             this.plate = plate;
         }
         else {
-            this.plate = "INVALID STANDART";
+            this.plate = null;
         }
         this.price = price;
     }
