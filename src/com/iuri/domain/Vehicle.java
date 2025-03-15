@@ -23,6 +23,7 @@ public abstract class Vehicle implements Rentable {
             this.plate = null;
         }
         this.price = price;
+        this.rentPricePerDay = calculateRentPricePerDay();
     }
 
     public String getName() {
@@ -47,5 +48,9 @@ public abstract class Vehicle implements Rentable {
 
     public boolean isAvailable() {
         return isAvailable;
+    }
+
+    public void setAvailable(boolean available) {
+        isAvailable = available;
     }
 }
