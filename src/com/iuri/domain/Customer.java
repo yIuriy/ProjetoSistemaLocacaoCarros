@@ -24,6 +24,14 @@ public class Customer {
         return name;
     }
 
+    public void addVehicleToRentedList(Vehicle vehicle){
+        rentedVehicles.add(vehicle);
+    }
+
+    public void removeVehicleFromRentedList(Vehicle vehicle){
+        rentedVehicles.remove(vehicle);
+    }
+
     public List<Vehicle> getRentedVehicles() {
         return rentedVehicles;
     }
