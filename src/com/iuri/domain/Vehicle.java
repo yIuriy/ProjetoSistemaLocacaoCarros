@@ -1,6 +1,6 @@
 package com.iuri.domain;
 
-public abstract class Vehicle {
+public abstract class Vehicle implements Rentable{
     protected String name;
     protected String model;
     protected String plate;
@@ -12,5 +12,25 @@ public abstract class Vehicle {
         this.model = model;
         this.plate = plate;
         this.price = price;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public String getPlate() {
+        return plate;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public double getRentPricePerDay() {
+        return rentPricePerDay;
     }
 }
