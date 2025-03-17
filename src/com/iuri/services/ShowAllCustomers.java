@@ -5,7 +5,7 @@ import com.iuri.domain.RentalCompany;
 import com.iuri.domain.Vehicle;
 
 public class ShowAllCustomers {
-    public void showCustomers(RentalCompany company){
+    public static void showCustomers(RentalCompany company){
         for (Customer customer : company.getCustomerList()) {
             System.out.println("Nome do cliente: " + customer.getName());
             if(!customer.getRentedVehicles().isEmpty()){
