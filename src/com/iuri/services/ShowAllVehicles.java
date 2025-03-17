@@ -8,7 +8,7 @@ public class ShowAllVehicles {
     public static void show(RentalCompany company) {
         for (Vehicle vehicle : company.getVehicleList()) {
             System.out.print("Nome do veículo: " + vehicle.getName());
-            System.out.println("Modelo do veículo: " + vehicle.getModel());
+            System.out.println(" | Modelo do veículo: " + vehicle.getModel());
             if (vehicle instanceof Car car) {
                 System.out.println("Tipo de carro: " + car.getModel());
             }
