@@ -23,6 +23,6 @@ public class CalculateRent {
                 rentTax = 0;
             }
         }
-        return vehicle.getRentPricePerDay() + rentTax;
+        return priceAtEnd + rentTax;
     }
 }
