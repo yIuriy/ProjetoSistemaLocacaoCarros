@@ -12,10 +12,29 @@ public class RentalCompany {
         this.name = name;
     }
 
-    public void addCustomer(Customer customer){
+    public Customer getCustomerByCpf(String cpf) {
+        for (Customer customer : customerList) {
+            if (customer.getCpf().equals(cpf)) {
+                return customer;
+            }
+        }
+        throw new RuntimeException("Cpf not found.");
+    }
+
+    public Vehicle getCarByPlate(String plate) {
+        for (Vehicle vehicle : vehicleList) {
+            if (vehicle.getPlate().equals(plate)) {
+                return vehicle;
+            }
+        }
+        throw new RuntimeException("Vehicle not found.");
+    }
+
+    public void addCustomer(Customer customer) {
         customerList.add(customer);
     }
-    public void addVehicle(Vehicle vehicle){
+
+    public void addVehicle(Vehicle vehicle) {
         vehicleList.add(vehicle);
     }
 
