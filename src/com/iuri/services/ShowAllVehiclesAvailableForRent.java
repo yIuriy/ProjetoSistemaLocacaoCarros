@@ -9,6 +9,7 @@ public class ShowAllVehiclesAvailableForRent {
             if (vehicle.isAvailable()) {
                 System.out.println("Nome do veículo: " + vehicle.getName());
                 System.out.println("Modelo do veículo: " + vehicle.getModel());
+                System.out.println("Placa do veículo: " + vehicle.getPlate());
                 System.out.println("Preço do aluguel diário: " + vehicle.getRentPricePerDay());
                 System.out.println("=========================================================================");
             }
