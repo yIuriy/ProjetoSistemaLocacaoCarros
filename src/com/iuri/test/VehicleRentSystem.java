@@ -60,6 +60,7 @@ public class VehicleRentSystem {
                             System.out.println("""
                                     1 - Ver carros disponíveis para alugar
                                     2 - Alugar um veículo
+                                    3 - Mostrar veículo alugado
                                     3 - Devolver veículo alugado
                                     """);
                             option = scanner.nextInt();
@@ -69,7 +70,26 @@ public class VehicleRentSystem {
                                     ShowAllVehiclesAvailableForRent.showRented(rentalCompany);
                                     break;
                                 case 2:
-                                    
+                                    System.out.println("Digite a placa do carro desejado: ");
+                                    String plate = scanner.nextLine();
+                                    System.out.println("Digite a quantidade de dias que o carro será alugado: ");
+                                    int rentalDays = scanner.nextInt();
+                                    scanner.nextLine();
+                                    RentVehicle.rent(temporaryCustomer, rentalCompany, plate, rentalDays);
+                                    System.out.println("Veículo alugado com sucesso.");
+                                    break;
+                                case 3:
+                                    ShowCustomerRentedVehicles.show(temporaryCustomer);
+                                    break;
+                                case 4:
+                                    if(temporaryCustomer.getRentedVehicles().isEmpty()){
+                                        System.out.println("O cliente " + temporaryCustomer.getName() + " não possui nenhum " +
+                                                "veículo alugado");
+                                        break;
+                                    }
+                                    System.out.println("Digite a placa do veículo a ser devolvido: ");
+                                    String vehicleToBeReturnedPlate = scanner.nextLine();
+                                    ReturnVehicle.returnVehicle(temporaryCustomer, rentalCompany, vehicleToBeReturnedPlate);
                             }
                         } else {
                             System.out.println("Senha incorreta.");
