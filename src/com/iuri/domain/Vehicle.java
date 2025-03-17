@@ -23,7 +23,6 @@ public abstract class Vehicle implements Rentable {
             this.plate = null;
         }
         this.price = price;
-        this.rentPricePerDay = calculateRentPricePerDay();
     }
 
     public String getName() {
