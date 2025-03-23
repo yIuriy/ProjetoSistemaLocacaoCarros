@@ -28,7 +28,8 @@ public class VehicleRentSystem {
             System.out.println("""
                     1 - Cadastrar cliente
                     2 - Sistema Cliente
-                    3 - Sistema Concessionária""");
+                    3 - Sistema Concessionária
+                    0 - Parar o programa""");
             System.out.println("Digite a opção desejada:");
             option = scanner.nextInt();
             scanner.nextLine();
@@ -90,6 +91,7 @@ public class VehicleRentSystem {
                                     System.out.println("Digite a placa do veículo a ser devolvido: ");
                                     String vehicleToBeReturnedPlate = scanner.nextLine();
                                     ReturnVehicle.returnVehicle(temporaryCustomer, rentalCompany, vehicleToBeReturnedPlate);
+                                    break;
                             }
                         } else {
                             System.out.println("Senha incorreta.");
@@ -99,6 +101,7 @@ public class VehicleRentSystem {
                         System.out.println("O CPF digitado não foi encontrado no sistema.");
                         break;
                     }
+                    break;
                 case 3:
                     System.out.println("""
                             SISTEMA CONCESSIONÁRIA
@@ -108,6 +111,7 @@ public class VehicleRentSystem {
                             4 - Listar todos os veículos disponíveis para alugar
                             5 - Cadastrar um veículo
                             6 - Gerar relatório
+                            0 - Parar o programa
                             """);
                     option = scanner.nextInt();
                     scanner.nextLine();
@@ -142,9 +146,13 @@ public class VehicleRentSystem {
                                 case 1:
                                     System.out.println("Digite o nome do carro: ");
                                     String carName = scanner.nextLine();
+                                    System.out.println("Digite o modelo do carro: ");
                                     String carModel = scanner.nextLine();
+                                    System.out.println("Digite a placa do carro no padrão(ACB1DE23): ");
                                     String carPlate = scanner.nextLine();
+                                    System.out.println("Digite o preço do carro: ");
                                     double carPrice = scanner.nextDouble();
+                                    scanner.nextLine();
                                     System.out.println("""
                                             Escolha o tipo de carro:
                                             SUV
@@ -159,30 +167,43 @@ public class VehicleRentSystem {
                                 case 2:
                                     System.out.println("Digite o nome da moto: ");
                                     String motoName = scanner.nextLine();
+                                    System.out.println("Digite o modelo da moto: ");
                                     String motoModel = scanner.nextLine();
+                                    System.out.println("Digite a placa da moto no padrão(ACB1DE23): ");
                                     String motoPlate = scanner.nextLine();
+                                    System.out.println("Digite o preço da moto: ");
                                     double motoPrice = scanner.nextDouble();
+                                    scanner.nextLine();
                                     RegisterMotorcycleForRent.register(motoName, motoModel, motoPlate, motoPrice, rentalCompany);
                                     System.out.println("Moto cadastrada com sucesso.");
                                     break;
                                 case 3:
                                     System.out.println("Digite o nome do caminhão: ");
                                     String truckName = scanner.nextLine();
+                                    System.out.println("Digite o modelo do caminhão: ");
                                     String truckModel = scanner.nextLine();
+                                    System.out.println("Digite a placa do caminhão no padrão(ACB1DE23): ");
                                     String truckPlate = scanner.nextLine();
+                                    System.out.println("Digite o preço do caminhão: ");
                                     double truckPrice = scanner.nextDouble();
+                                    scanner.nextLine();
                                     RegisterMotorcycleForRent.register(truckName, truckModel, truckPlate, truckPrice,
                                             rentalCompany);
                                     System.out.println("Caminhão cadastrada com sucesso.");
                                     break;
                             }
                         case 6:
-
-
-
+                            try {
+                                CreateReport.create(rentalCompany);
+                                System.out.println("Relatório criado com sucesso");
+                            } catch (RuntimeException e) {
+                                System.out.println("Erro ao gerar o relatório.");
+                            }
+                            break;
+                        default:
+                            System.out.println("Digite uma opção válida!");
+                            break;
                     }
-
-
             }
         }
         while (option != 0);
