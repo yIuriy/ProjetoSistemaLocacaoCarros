@@ -67,7 +67,7 @@ public class VehicleRentSystem {
                             scanner.nextLine();
                             switch (option) {
                                 case 1:
-                                    ShowAllVehiclesAvailableForRent.showRented(rentalCompany);
+                                    ShowAllVehiclesAvailableForRent.showAvailableForRent(rentalCompany);
                                     break;
                                 case 2:
                                     System.out.println("Digite a placa do carro desejado: ");
@@ -82,7 +82,7 @@ public class VehicleRentSystem {
                                     ShowCustomerRentedVehicles.show(temporaryCustomer);
                                     break;
                                 case 4:
-                                    if(temporaryCustomer.getRentedVehicles().isEmpty()){
+                                    if (temporaryCustomer.getRentedVehicles().isEmpty()) {
                                         System.out.println("O cliente " + temporaryCustomer.getName() + " não possui nenhum " +
                                                 "veículo alugado");
                                         break;
@@ -99,6 +99,90 @@ public class VehicleRentSystem {
                         System.out.println("O CPF digitado não foi encontrado no sistema.");
                         break;
                     }
+                case 3:
+                    System.out.println("""
+                            SISTEMA CONCESSIONÁRIA
+                            1 - Listar clientes
+                            2 - Listar todos os veículos
+                            3 - Listar todos os veículos alugados
+                            4 - Listar todos os veículos disponíveis para alugar
+                            5 - Cadastrar um veículo
+                            6 - Gerar relatório
+                            """);
+                    option = scanner.nextInt();
+                    scanner.nextLine();
+                    switch (option) {
+                        case 1:
+                            if (rentalCompany.getCustomerList().isEmpty()) {
+                                System.out.println("Não há nenhum cliente cadastrado.");
+                                break;
+                            }
+                            ShowAllCustomers.showCustomers(rentalCompany);
+                        case 2:
+                            if (rentalCompany.getVehicleList().isEmpty()) {
+                                System.out.println("Não há nenhum veículo cadastrado.");
+                                break;
+                            }
+                            ShowAllVehicles.show(rentalCompany);
+                        case 3:
+                            ShowAllRentedVehicles.showRented(rentalCompany);
+                            break;
+                        case 4:
+                            ShowAllVehiclesAvailableForRent.showAvailableForRent(rentalCompany);
+                            break;
+                        case 5:
+                            System.out.println("""
+                                    1 - Carro
+                                    2 - Moto
+                                    3 - Caminhão
+                                    Digite o tipo de veículo a ser alugado:""");
+                            option = scanner.nextInt();
+                            scanner.nextLine();
+                            switch (option) {
+                                case 1:
+                                    System.out.println("Digite o nome do carro: ");
+                                    String carName = scanner.nextLine();
+                                    String carModel = scanner.nextLine();
+                                    String carPlate = scanner.nextLine();
+                                    double carPrice = scanner.nextDouble();
+                                    System.out.println("""
+                                            Escolha o tipo de carro:
+                                            SUV
+                                            PICKUP
+                                            SPORTY
+                                            SEDAN
+                                            """);
+                                    CarType carType = CarType.valueOf(scanner.nextLine().toUpperCase());
+                                    RegisterCarForRent.register(carName, carModel, carPlate, carPrice, carType, rentalCompany);
+                                    System.out.println("Carro cadastrado com sucesso.");
+                                    break;
+                                case 2:
+                                    System.out.println("Digite o nome da moto: ");
+                                    String motoName = scanner.nextLine();
+                                    String motoModel = scanner.nextLine();
+                                    String motoPlate = scanner.nextLine();
+                                    double motoPrice = scanner.nextDouble();
+                                    RegisterMotorcycleForRent.register(motoName, motoModel, motoPlate, motoPrice, rentalCompany);
+                                    System.out.println("Moto cadastrada com sucesso.");
+                                    break;
+                                case 3:
+                                    System.out.println("Digite o nome do caminhão: ");
+                                    String truckName = scanner.nextLine();
+                                    String truckModel = scanner.nextLine();
+                                    String truckPlate = scanner.nextLine();
+                                    double truckPrice = scanner.nextDouble();
+                                    RegisterMotorcycleForRent.register(truckName, truckModel, truckPlate, truckPrice,
+                                            rentalCompany);
+                                    System.out.println("Caminhão cadastrada com sucesso.");
+                                    break;
+                            }
+                        case 6:
+
+
+
+                    }
+
+
             }
         }
         while (option != 0);
