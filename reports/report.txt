@@ -1,0 +1,16 @@
+Relatório CarrosJavai[2025-03-23T15:44:47.186370300]
+Carros alugados:
+Nome do veículo: Scania| Placa do veículo: LOR7F99
+Carros disponíveis para aluguel:
+Nome do veículo: Audi| Placa do veículo: AKC4F32
+Nome do veículo: BMW| Placa do veículo: XYZ1A23
+Nome do veículo: Toyota| Placa do veículo: JHG2B45
+Nome do veículo: Honda| Placa do veículo: GHT4F54
+Nome do veículo: Yamaha| Placa do veículo: MOT3C67
+Nome do veículo: Suzuki| Placa do veículo: BKE9D89
+Nome do veículo: Marcopolo| Placa do veículo: FDF8G12
+Nome do veículo: Volvo| Placa do veículo: TRK5E77
+Clientes cadastrados: 
+Nome do cliente: IuriCarros alugados : 
+Scania
+===================================================================
