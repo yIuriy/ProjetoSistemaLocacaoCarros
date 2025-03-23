@@ -45,4 +45,8 @@ public class RentalCompany {
     public List<Vehicle> getVehicleList() {
         return vehicleList;
     }
+
+    public String getName() {
+        return name;
+    }
 }
